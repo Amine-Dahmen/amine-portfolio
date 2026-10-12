@@ -1,0 +1,50 @@
+@import 'tailwindcss' source(none);
+
+/* Tailwind Oxide on Windows does not expand directory @source entries here; list TSX explicitly. */
+@source '../index.html';
+@source './App.tsx';
+@source './main.tsx';
+@source './components/effects/AnimatedBackground.tsx';
+@source './components/layout/Footer.tsx';
+@source './components/layout/Navbar.tsx';
+@source './components/layout/PageLoader.tsx';
+@source './components/sections/About.tsx';
+@source './components/sections/Contact.tsx';
+@source './components/sections/Experience.tsx';
+@source './components/sections/Hero.tsx';
+@source './components/sections/Projects.tsx';
+@source './components/sections/Skills.tsx';
+@source './components/ui/Button.tsx';
+@source './components/ui/ProjectCard.tsx';
+@source './components/ui/SectionHeader.tsx';
+@source './hooks/usePrefersReducedMotion.ts';
+
+@theme {
+  --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --color-surface: #09090b;
+  --color-surface-elevated: #0c0c0f;
+  --color-border-subtle: rgba(255, 255, 255, 0.06);
+  --color-accent-violet: #a78bfa;
+  --color-accent-cyan: #22d3ee;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: rgba(167, 139, 250, 0.35);
+  color: #fafafa;
+}
