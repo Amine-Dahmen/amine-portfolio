@@ -11,7 +11,7 @@ Modern, dark-first developer portfolio built with React, Vite, TypeScript, Tailw
 
 ```bash
 cd amine-portfolio
-npm install
+npm installnpm run dev
 ```
 
 ## Development
