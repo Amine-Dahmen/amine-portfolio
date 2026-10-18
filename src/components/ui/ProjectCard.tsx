@@ -15,21 +15,17 @@ export function ProjectCard({ project }: Props) {
       transition={{ type: 'spring', stiffness: 320, damping: 28 }}
       className="group relative flex flex-col overflow-hidden rounded-2xl bg-zinc-900/40 ring-1 ring-white/[0.06] backdrop-blur-sm transition-[box-shadow,transform] hover:-translate-y-0.5 hover:ring-violet-500/25 hover:shadow-[0_0_0_1px_rgba(139,92,246,0.15),0_24px_80px_-32px_rgba(0,0,0,0.8)]"
     >
-      <div
-        className={`relative h-44 bg-gradient-to-br ${project.imageGradient} overflow-hidden`}
-      >
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.12),transparent_55%)]" />
-        <div className="absolute inset-0 opacity-40 mix-blend-overlay bg-[linear-gradient(120deg,transparent,rgba(255,255,255,0.08),transparent)] translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-        <div className="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2">
-          {project.tags.slice(0, 3).map((tag) => (
-            <span
-              key={tag}
-              className="rounded-full bg-black/35 px-2.5 py-0.5 text-[11px] font-medium text-zinc-100 ring-1 ring-white/10 backdrop-blur-md"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
+      <div className="relative h-44 overflow-hidden">
+        {project.cover ? (
+          <img
+            src={project.cover}
+            alt={project.title}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <div className={`h-full w-full bg-gradient-to-br ${project.imageGradient}`} />
+        )}
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(120deg,transparent,rgba(255,255,255,0.08),transparent)] opacity-40 mix-blend-overlay translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
       </div>
 
       <div className="flex flex-1 flex-col gap-4 p-6">

@@ -20,6 +20,7 @@ export type Project = {
   title: string
   description: string
   imageGradient: string
+  cover?: string
   tags: string[]
   categories: Exclude<ProjectCategory, 'all'>[]
   githubUrl: string
@@ -33,6 +34,7 @@ export const projects: Project[] = [
     description:
       'Predicts Premier League results (home win, draw, away win) as probabilities, using team form, home/away record, head-to-head stats and ELO ratings. Covers the full pipeline from data collection to evaluation, with a Streamlit interface.',
     imageGradient: 'from-violet-500/30 via-fuchsia-500/20 to-cyan-500/25',
+    cover: '/covers/football.svg',
     tags: [
       'Python',
       'Scikit-learn',
@@ -53,6 +55,7 @@ export const projects: Project[] = [
     description:
       'Real-time computer vision system that detects missing protective equipment on construction sites. I fine-tuned YOLOv8 to reach 85.1% mAP50, then added webcam monitoring, automatic violation logging, a Streamlit interface and a REST API.',
     imageGradient: 'from-amber-500/20 via-orange-500/15 to-rose-500/20',
+    cover: '/covers/safety-monitor.svg',
     tags: ['Python', 'YOLOv8', 'PyTorch', 'OpenCV', 'Streamlit', 'FastAPI'],
     categories: ['ai-ml'],
     githubUrl: 'https://github.com/Amine-Dahmen',
@@ -64,6 +67,7 @@ export const projects: Project[] = [
     description:
       'Smart parking system built as microservices. It monitors parking spots and air quality in real time, with IoT sensors connected through MQTT, alerts handled by RabbitMQ and APIs secured behind a gateway with JWT authentication.',
     imageGradient: 'from-cyan-500/25 via-emerald-500/20 to-teal-500/25',
+    cover: '/covers/parking-iot.svg',
     tags: ['C#', '.NET 8/10', 'Microservices', 'MQTT', 'RabbitMQ', 'REST API', 'JWT', 'Swagger'],
     categories: ['iot'],
     githubUrl: 'https://github.com/Amine-Dahmen',
@@ -75,6 +79,7 @@ export const projects: Project[] = [
     description:
       'Industry 4.0 prototype that uses ESP32 and PN532 RFID readers to classify products as GOOD or BAD in real time. Data goes to Firebase Realtime Database and shows up on a web dashboard for live monitoring and traceability history.',
     imageGradient: 'from-indigo-500/25 via-violet-500/20 to-slate-500/25',
+    cover: '/covers/rfid-traceability.svg',
     tags: [
       'C++',
       'ESP32',
@@ -96,6 +101,7 @@ export const projects: Project[] = [
     description:
       'Modular ERP for restaurant management: orders, inventory, user access and sales analytics. ESP32 sensors track temperature, humidity, stock weight and door events, with automated alerts, material usage tracking, reports and role-based access control. Built during my internship at the APII Mahdia incubator.',
     imageGradient: 'from-emerald-500/25 via-cyan-500/15 to-sky-500/25',
+    cover: '/covers/restaurant-erp.svg',
     tags: [
       'Python',
       'Flask',
